@@ -13,33 +13,33 @@
 
 ;(add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;(setq-default indent-tabs-mode nil)
-;(setq-default c-basic-offset 4)
-;(setq-default tab-width 4)
-;(add-to-list 'load-path "~/.emacs.d/lisp/")
-;
-;(add-hook 'verilog-mode-hook
-;      '(lambda ()
-;;         (setq verilog-auto-newline nil)
-;         (setq verilog-indent-level             4
-;               verilog-indent-level-module      0
-;               verilog-indent-level-declaration 0
-;               verilog-indent-level-behavioral  4
-;               verilog-indent-level-directive   4
-;               verilog-case-indent              4
-;               verilog-cexp-indent              4
-;               verilog-indent-begin-after-if    nil
-;               verilog-auto-newline             t
-;               verilog-auto-indent-on-newline   t
-;               verilog-tab-always-indent        t
-;               verilog-auto-endcomments         t
-;               verilog-align-ifelse nil         t
-;               verilog-minimum-comment-distance 40
-;               verilog-indent-level 4)
-;;         (setq verilog-tab-always-indent nil)
-;))
-(add-to-list 'load-path "/opt/fpgatools/emacs/lisp/")
-(load-file "/opt/fpgatools/emacs/fpga_config.el")
+(setq-default indent-tabs-mode nil)
+(setq-default c-basic-offset 4)
+(setq-default tab-width 4)
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+(add-hook 'verilog-mode-hook
+      '(lambda ()
+;         (setq verilog-auto-newline nil)
+         (setq verilog-indent-level             4
+               verilog-indent-level-module      0
+               verilog-indent-level-declaration 0
+               verilog-indent-level-behavioral  4
+               verilog-indent-level-directive   4
+               verilog-case-indent              4
+               verilog-cexp-indent              4
+               verilog-indent-begin-after-if    nil
+               verilog-auto-newline             t
+               verilog-auto-indent-on-newline   t
+               verilog-tab-always-indent        t
+               verilog-auto-endcomments         t
+               verilog-align-ifelse nil         t
+               verilog-minimum-comment-distance 40
+               verilog-indent-level 4)
+;         (setq verilog-tab-always-indent nil)
+))
+;(add-to-list 'load-path "/opt/fpgatools/emacs/lisp/")
+;(load-file "/opt/fpgatools/emacs/fpga_config.el")
 
 ;; try new here
 ;   ;; Enable syntax highlighting of **all** languages
@@ -138,8 +138,8 @@ Uses `vc.el' or `rcs.el' depending on `ediff-version-control-package'."
   ;(set-frame-font "DejaVu Sans Mono" nil t)
   ;(set-frame-size (selected-frame) 120 50)
   ;;(load-theme 'alect-light t)
-  ;;(load-theme 'zenburn t)
-  (load-theme 'solarized-dark t)
+  (load-theme 'zenburn t)
+  ;(load-theme 'solarized-dark t)
   ;(load-theme 'ample t)
   ;(load-theme 'cherry-blossom t)
   ;(load-theme 'soft-charcoal t)
@@ -157,9 +157,9 @@ Uses `vc.el' or `rcs.el' depending on `ediff-version-control-package'."
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
-(require 'framemove)
-    (windmove-default-keybindings)
-    (setq framemove-hook-into-windmove t)
+;(require 'framemove)
+;    (windmove-default-keybindings)
+;    (setq framemove-hook-into-windmove t)
 
 ;; Preset width nlinum
 ;(add-hook 'nlinum-mode-hook
@@ -182,8 +182,8 @@ Uses `vc.el' or `rcs.el' depending on `ediff-version-control-package'."
 ;(global-set-key (kbd "C->") 'mc/mark-next-like-this)
 ;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 ;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-;(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "s-c") 'mc/edit-lines)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;(global-set-key (kbd "s-c") 'mc/edit-lines)
 
 (global-set-key (kbd "s-s") 'mc/mark-next-like-this)
 (global-set-key (kbd "s-r") 'mc/mark-previous-like-this)
@@ -231,18 +231,18 @@ Uses `vc.el' or `rcs.el' depending on `ediff-version-control-package'."
 
 ; opengrok setup
 ; requires clj-opengrok
-(require 'eopengrok)
+;(require 'eopengrok)
 
-(define-key global-map (kbd "C-c s i") 'eopengrok-create-index)
-(define-key global-map (kbd "C-c s I") 'eopengrok-create-index-with-enable-projects)
-(define-key global-map (kbd "C-c s d") 'eopengrok-find-definition)
-(define-key global-map (kbd "C-c s f") 'eopengrok-find-file)
-(define-key global-map (kbd "C-c s s") 'eopengrok-find-reference)
-(define-key global-map (kbd "C-c s t") 'eopengrok-find-text)
-(define-key global-map (kbd "C-c s h") 'eopengrok-find-history)
-(define-key global-map (kbd "C-c s c") 'eopengrok-find-custom)
-(define-key global-map (kbd "C-c s b") 'eopengrok-resume)
-(put 'downcase-region 'disabled nil)
+;(define-key global-map (kbd "C-c s i") 'eopengrok-create-index)
+;(define-key global-map (kbd "C-c s I") 'eopengrok-create-index-with-enable-projects)
+;(define-key global-map (kbd "C-c s d") 'eopengrok-find-definition)
+;(define-key global-map (kbd "C-c s f") 'eopengrok-find-file)
+;(define-key global-map (kbd "C-c s s") 'eopengrok-find-reference)
+;(define-key global-map (kbd "C-c s t") 'eopengrok-find-text)
+;(define-key global-map (kbd "C-c s h") 'eopengrok-find-history)
+;(define-key global-map (kbd "C-c s c") 'eopengrok-find-custom)
+;(define-key global-map (kbd "C-c s b") 'eopengrok-resume)
+;(put 'downcase-region 'disabled nil)
 
 (defun color4 ()
   "Sets color scheme number 4"
