@@ -3,7 +3,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/")))))
+ '(delete-selection-mode nil)
+ '(inhibit-startup-screen t)
+ '(mark-even-if-inactive t)
+ '(package-archives
+   (quote
+    (("gnu" . "http://elpa.gnu.org/packages/")
+     ("melpa" . "http://melpa.milkbox.net/packages/"))))
+ '(package-selected-packages
+   (quote
+    (smex zenburn-theme multiple-cursors magit helm framemove dumb-jump)))
+ '(scroll-bar-mode (quote right))
+ '(transient-mark-mode 1))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -82,22 +93,8 @@
 ;(global-srecode-minor-mode 1)            ; Enable template insertion menu
 
 
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(delete-selection-mode nil)
- '(inhibit-startup-screen t)
- '(mark-even-if-inactive t)
- '(scroll-bar-mode (quote right))
- '(transient-mark-mode 1))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+
+
 
 (eval-after-load "vc-hooks"
   '(define-key vc-prefix-map "=" 'ediff-revision))
@@ -270,3 +267,12 @@ Uses `vc.el' or `rcs.el' depending on `ediff-version-control-package'."
 ;(color4)
 
 (dumb-jump-mode)
+
+; Fuzzy search and better M-x
+(require 'smex) ; Not needed if you use package.el
+;(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+                   ; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)

@@ -1,0 +1,2 @@
+alias em="emacs25 > /dev/null 2>&1"
+alias gsu="git status"
