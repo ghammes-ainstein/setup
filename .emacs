@@ -12,7 +12,7 @@
      ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(package-selected-packages
    (quote
-    (smex zenburn-theme multiple-cursors magit helm framemove dumb-jump)))
+    (phi-search expand-region smex zenburn-theme multiple-cursors magit helm framemove dumb-jump)))
  '(scroll-bar-mode (quote right))
  '(transient-mark-mode 1))
 (custom-set-faces
@@ -22,33 +22,55 @@
  ;; If there is more than one, they won't work right.
  )
 
-;(add-to-list 'load-path "~/.emacs.d/lisp/")
-
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(load-file "~/.emacs.d/lisp/verilog-mode.el")
 
-(add-hook 'verilog-mode-hook
-      '(lambda ()
-;         (setq verilog-auto-newline nil)
-         (setq verilog-indent-level             4
-               verilog-indent-level-module      0
-               verilog-indent-level-declaration 0
-               verilog-indent-level-behavioral  4
-               verilog-indent-level-directive   4
-               verilog-case-indent              4
-               verilog-cexp-indent              4
-               verilog-indent-begin-after-if    nil
-               verilog-auto-newline             t
-               verilog-auto-indent-on-newline   t
-               verilog-tab-always-indent        t
-               verilog-auto-endcomments         t
-               verilog-align-ifelse nil         t
-               verilog-minimum-comment-distance 40
-               verilog-indent-level 4)
-;         (setq verilog-tab-always-indent nil)
-))
+;; Enable syntax highlighting of **all** languages
+(global-font-lock-mode t)
+
+;; User customization for Verilog mode
+(setq verilog-indent-level             4
+      verilog-indent-level-module      4
+      verilog-indent-level-declaration 4
+      verilog-indent-level-behavioral  4
+      verilog-indent-level-directive   4
+      verilog-case-indent              4
+      verilog-cexp-indent              4
+      verilog-auto-newline             4
+      verilog-auto-indent-on-newline   t
+      verilog-tab-always-indent        t
+      verilog-auto-endcomments         t
+      verilog-minimum-comment-distance 40
+      verilog-indent-begin-after-if    t
+                                        ;      verilog-auto-lineup              'declarations
+      verilog-auto-lineup              'all
+      verilog-highlight-p1800-keywords nil
+      verilog-linter                   "my_lint_shell_command"
+      )
+
+;(add-hook 'verilog-mode-hook
+;      '(lambda ()
+;;         (setq verilog-auto-newline nil)
+;         (setq verilog-indent-level             4
+;               verilog-indent-level-module      0
+;               verilog-indent-level-declaration 0
+;               verilog-indent-level-behavioral  4
+;               verilog-indent-level-directive   4
+;               verilog-case-indent              4
+;               verilog-cexp-indent              4
+;               verilog-indent-begin-after-if    nil
+;               verilog-auto-newline             t
+;               verilog-auto-indent-on-newline   t
+;               verilog-tab-always-indent        t
+;               verilog-auto-endcomments         t
+;               verilog-align-ifelse nil         t
+;               verilog-minimum-comment-distance 40
+;               verilog-indent-level 4)
+;;         (setq verilog-tab-always-indent nil)
+;))
 ;(add-to-list 'load-path "/opt/fpgatools/emacs/lisp/")
 ;(load-file "/opt/fpgatools/emacs/fpga_config.el")
 
