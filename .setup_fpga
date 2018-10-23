@@ -1,6 +1,8 @@
 source /opt/Xilinx/Vivado/2018.2/settings64.sh
-export FPGA_ROOT=~/source/ainstein/fpga
+export AI_SOURCE=~/source/ainstein
 export PATH=$PATH:~/source/ainstein/python/progs
+PYTHONPATH="~/source/ainstein/python:${PYTHONPATH}"
+export PYTHONPATH
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'

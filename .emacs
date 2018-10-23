@@ -26,7 +26,7 @@
 (setq-default c-basic-offset 4)
 (setq-default tab-width 4)
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(load-file "~/.emacs.d/lisp/verilog-mode.el")
+(load-file "~/tools/verilog-mode/e/verilog-mode.el")
 
 ;; Enable syntax highlighting of **all** languages
 (global-font-lock-mode t)

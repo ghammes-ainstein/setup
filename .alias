@@ -1,4 +1,5 @@
 alias em="emacs25 > /dev/null 2>&1"
 alias gsu="git status -uno"
-alias cdf='cd $FPGA_ROOT/fsg/rtl'
+alias cdf='cd $AI_SOURCE/fpga/fsg/rtl'
 alias cdb='cd ~/fpga_builds'
+alias cdp='cd ~/source/ainstein/python'
