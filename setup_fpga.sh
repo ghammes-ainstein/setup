@@ -1,12 +1,13 @@
 source /opt/Xilinx/Vivado/2018.2/settings64.sh
-export AI_SOURCE=~/source/ainstein
-export PATH=$PATH:~/source/ainstein/python/progs:/opt/intel/18.1/quartus/bin
+source ~/source/petalinux/2018.2/settings.sh
+export AI_SOURCE=~/source/sports_radar
+export PATH=$PATH:$AI_SOURCE/python/progs:/opt/intel/18.1/quartus/bin
 
 if [ -z "${PYTHONPATH:-}" ]
 then
-    export PYTHONPATH=~/source/ainstein/python
+    export PYTHONPATH=$AI_SOURCE/python
 else                
-    export PYTHONPATH=~/source/ainstein/python:${PYTHONPATH}
+    export PYTHONPATH=$AI_SOURCE/python:${PYTHONPATH}
 fi
 
 #parse_git_branch() {
