@@ -22,7 +22,7 @@
       verilog-indent-begin-after-if    t
                                         ;      verilog-auto-lineup              'declarations
       verilog-auto-lineup              'all
-      verilog-highlight-p1800-keywords nil
+      verilog-highlight-p1800-keywords t
       verilog-linter                   "my_lint_shell_command"
       )
 
