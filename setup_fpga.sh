@@ -1,5 +1,5 @@
 source /opt/Xilinx/Vivado/2019.1/settings64.sh
-#source ~/source/petalinux/2019.1/settings.sh
+#source ~/tools/petalinux/2019.1/settings.sh
 export AI_SOURCE=~/source/sports_radar
 export PATH=$PATH:$AI_SOURCE/python/progs:/opt/intel/18.1/quartus/bin
 
